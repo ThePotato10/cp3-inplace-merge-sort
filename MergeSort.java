@@ -7,7 +7,7 @@ class MergeSort {
     public static int[] sort(int[] array) {
         int[] aux = new int[array.length];
 
-        for (int i = 0; i < (array.length / 2) - 1; i++) { // runs for the number of iterations necessary to sort fully
+        for (int i = 0; i < (int) (Math.log(array.length) / Math.log(2)) + 1; i++) { // runs for the number of iterations necessary to sort fully
             int mergeSize = (int) Math.pow(2, i); // mergeSize doubles every iteration
 
             for (int j = 0; j < array.length; j += (mergeSize * 2)) { // loop over all elements in array
@@ -69,6 +69,6 @@ class MergeSort {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sort(new int[]{10, 3, 2, 12, 7, 1, 8, 4, 54, 9, 5, 14, 76, 2, 87, 34, 6, 1, 0, 23})));
+        System.out.println(Arrays.toString(sort(new int[]{118, 183, 63, 122, 78, 58, 180, 102, 145, 174, 14, 50, 172, 92, 55, 186, 50, 149, 189, 124, 12, 18, 43, 15, 156, 163, 125, 192, 12, 64, 191, 118, 75, 43, 99, 80, 99, 124, 60, 2, 42, 197, 21, 32, 76, 156, 55, 18, 66, 159, 119, 121, 192, 167, 48, 68, 97, 0, 199, 192, 100, 100, 87, 74, 96, 189, 172, 19, 124, 131, 57, 120, 190, 158, 185})));
     }
 }
